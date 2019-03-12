@@ -1,0 +1,42 @@
+﻿@model ProjetoCRUD.Models.PedidoVenda
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PedidoVenda</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nroEmpresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nroEmpresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.seqPessoa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.seqPessoa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtaPedido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtaPedido)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.seqPedVenda }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,50 @@
+﻿@model ProjetoCRUD.Models.ItemVenda
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ItemVenda</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.quantidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.embalagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.embalagem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vlrItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vlrItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.seqPedVenda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PedidoVenda.seqPedVenda)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.seqPedVendaItem }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

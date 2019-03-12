@@ -1,0 +1,56 @@
+﻿@model ProjetoCRUD.Models.ItemVenda
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ItemVenda</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.quantidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.embalagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.embalagem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vlrItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vlrItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.seqPedVenda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PedidoVenda.seqPedVenda)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

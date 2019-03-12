@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ProjetoCRUD.Models.PedidoVenda>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Pedido de Venda</h2>
+
+<p>
+    @Html.ActionLink("Novo Pedido", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nroEmpresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.seqPessoa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dtaPedido)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nroEmpresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.seqPessoa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dtaPedido)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.seqPedVenda }) |
+            @Html.ActionLink("Detalhar", "Details", new { id = item.seqPedVenda }) |
+            @Html.ActionLink("Excluir", "Delete", new { id = item.seqPedVenda }) |         
+            @Html.ActionLink("Inserir Item", "Index", "ItemVendas", new { id = item.seqPedVenda }, null)
+        </td>
+    </tr>
+}
+
+</table>
