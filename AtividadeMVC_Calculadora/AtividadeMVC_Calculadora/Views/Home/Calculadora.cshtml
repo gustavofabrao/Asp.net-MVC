@@ -1,0 +1,68 @@
+﻿@model AtividadeMVC_Calculadora.Models.CalculadoraModel
+
+@{
+    /**/
+
+    ViewBag.Title = "Calculadora";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Calculadora</h2>
+
+<h3>Digite os valores abaixo e a operação que deseja realizar</h3>
+<br />
+@using (Html.BeginForm())
+{
+    <label> Numero 1</label><br />
+    @Html.TextBoxFor(s => s.numero1, new { style = "width: 250px; height: 30px;" })
+    <br /><br />
+    <label> Operação </label><br />
+    @Html.DropDownListFor(s => s.operacao, new SelectListItem[]{
+        new SelectListItem() {Text = "+", Value="+"},
+        new SelectListItem() {Text = "-", Value="-"},
+        new SelectListItem() {Text = "/", Value="/"},
+        new SelectListItem() {Text = "*", Value="*"}}, new { style = "width: 250px; height: 30px;" })
+    <br /><br />
+    <label>Numero 2</label><br />
+    @Html.TextBoxFor(s => s.numero2, new { style = "width: 250px; height: 30px;" })
+    <br /><br />
+    <input type="submit" value="Calcular" />
+
+
+    <br /><br />
+}
+<h1>@ViewBag.Resultado</h1>
+<br />
+
+<table id="gridCalc" class="table table-hover table-striped" cellspacing="0" style="width: 100%;">
+    <thead>
+        <tr>
+            <th>Numero 1</th>
+            <th>Operação</th>
+            <th>Numero 2</th>
+            <th>Resultado</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ViewBag.ListaResult != null)
+        {
+            foreach (var x in ViewBag.ListaResult)
+            {
+                <tr>
+                    <td>
+                        @x.numero1
+                    </td>
+                    <td>
+                        @x.operacao
+                    </td>
+                    <td>
+                        @x.numero2
+                    </td>
+                    <td>
+                        @x.resultado
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
